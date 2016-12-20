@@ -1,0 +1,32 @@
+{
+  "name": "cookie-cache-loader",
+  "version": "0.1.0",
+  "description": "Cookie cache loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tollwerk/cookie-cache-loader.git"
+  },
+  "keywords": [
+    "cookie",
+    "cache",
+    "loader",
+    "loadcss",
+    "loadjs"
+  ],
+  "author": "Joschi Kuphal <https://jkphl.is>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tollwerk/cookie-cache-loader/issues"
+  },
+  "homepage": "https://github.com/tollwerk/cookie-cache-loader#readme",
+  "dependencies": {
+    "fg-loadcss": "^1.2.0",
+    "fg-loadjs": "^1.0.0",
+    "webpack": "^1.14.0"
+  }
+}
