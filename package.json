@@ -1,37 +1,47 @@
 {
-  "name": "cookie-cache-loader",
-  "version": "0.1.0",
-  "description": "Cookie cache loader",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tollwerk/cookie-cache-loader.git"
-  },
-  "keywords": [
-    "cookie",
-    "cache",
-    "loader",
-    "loadcss",
-    "loadjs"
-  ],
-  "author": "Joschi Kuphal <https://jkphl.is>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tollwerk/cookie-cache-loader/issues"
-  },
-  "homepage": "https://github.com/tollwerk/cookie-cache-loader#readme",
-  "dependencies": {
-    "fg-loadcss": "^1.2.0",
-    "fg-loadjs": "^1.0.0",
-    "webpack": "^1.14.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "script-loader": "^0.7.0",
-    "webpack-stream": "^3.2.0"
-  }
+    "name": "cookie-cache-loader",
+    "version": "0.1.0",
+    "description": "Cookie cache loader",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server --inline --host 0.0.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tollwerk/cookie-cache-loader.git"
+    },
+    "keywords": [
+        "cookie",
+        "cache",
+        "loader",
+        "loadcss",
+        "loadjs"
+    ],
+    "author": "Joschi Kuphal <https://jkphl.is>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tollwerk/cookie-cache-loader/issues"
+    },
+    "homepage": "https://github.com/tollwerk/cookie-cache-loader#readme",
+    "dependencies": {
+        "fg-loadcss": "^1.2.0",
+        "fg-loadjs": "^1.0.0"
+    },
+    "devDependencies": {
+        "babel-loader": "^6.2.10",
+        "babel-preset-es2015": "^6.18.0",
+        "es6-promise-promise": "^1.0.0",
+        "eslint": "^3.12.2",
+        "eslint-config-airbnb": "^13.0.0",
+        "eslint-plugin-import": "^2.2.0",
+        "eslint-plugin-jsx-a11y": "^2.2.3",
+        "eslint-plugin-react": "^6.8.0",
+        "script-loader": "^0.7.0",
+        "uglify-loader": "^1.4.0",
+        "webpack": "fulls1z3/webpack",
+        "webpack-dev-server": "^1.16.2"
+    }
 }
