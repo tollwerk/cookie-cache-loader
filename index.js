@@ -1,8 +1,11 @@
+/* global onloadCSS */
+
+const scope = (typeof global !== 'undefined' ? global : this);
 const loadJS = require('fg-loadjs');
 const loadCSS = require('fg-loadcss').loadCSS;
 require('fg-loadcss/src/onloadCSS.js');
 
-(function cookieCacheLoad(window) {
+{
     /**
      * Convert a value into a list of non-empty string values
      *
@@ -34,7 +37,8 @@ require('fg-loadcss/src/onloadCSS.js');
      * @param {String} hash Resource hash
      * @param {Function} callback Callback after loading all resources
      */
-    function ccl(stylesheets = [], scripts = [], hash = null, callback = () => {}) {
+    function ccl(stylesheets = [], scripts = [], hash = null, callback = () => {
+    }) {
         const stls = mklist(stylesheets);
         const scts = mklist(scripts);
         const cb = (typeof callback === 'function') ? callback : () => {};
@@ -56,7 +60,7 @@ require('fg-loadcss/src/onloadCSS.js');
         /**
          * Return a stylesheet promise callback
          *
-         * @param {String} stylesheet Stylesheet file
+         * @param {String} stylesheet Stylesheet file@
          * @returns {Function} Promise callback
          */
         function cssLoader(stylesheet) {
@@ -83,14 +87,14 @@ require('fg-loadcss/src/onloadCSS.js');
         const cookie = ((typeof hash === 'string' || hash instanceof String) ? hash.trim() : '') || null;
         if (promises.length) {
             Promise
-                .all(promises)
-                .then(() => {
-                    if (cookie !== null) {
-                        const expires = new Date(+new Date() + 604800000).toUTCString();
-                        document.cookie = `ccl=${cookie}; expires=${expires}`;
-                    }
-                    cb(count);
-                });
+            .all(promises)
+            .then(() => {
+                if (cookie !== null) {
+                    const expires = new Date(+new Date() + 604800000).toUTCString();
+                    document.cookie = `ccl=${cookie}; expires=${expires}`;
+                }
+                cb(count);
+            });
 
             return;
         }
@@ -102,6 +106,6 @@ require('fg-loadcss/src/onloadCSS.js');
     if (typeof module !== 'undefined') {
         module.exports = ccl;
     } else {
-        window.cookieCacheLoad = ccl;
+        scope.cookieCacheLoad = ccl;
     }
-}(typeof global !== 'undefined' ? global : this));
+}
