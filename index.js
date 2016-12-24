@@ -3,7 +3,9 @@
 const scope = (typeof global !== 'undefined' ? global : this);
 const loadJS = require('fg-loadjs');
 const loadCSS = require('fg-loadcss').loadCSS;
-require('fg-loadcss/src/onloadCSS.js');
+const onloadCSSShim = require('fg-loadcss/src/onloadCSS.js');
+
+const cssOnload = (typeof onloadCSS !== 'function') ? onloadCSSShim : onloadCSS;
 
 {
     /**
@@ -65,7 +67,7 @@ require('fg-loadcss/src/onloadCSS.js');
          */
         function cssLoader(stylesheet) {
             return (resolve) => {
-                onloadCSS(loadCSS(stylesheet), resolve);
+                cssOnload(loadCSS(stylesheet), resolve);
             };
         }
 
